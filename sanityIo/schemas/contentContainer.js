@@ -26,6 +26,7 @@ export default {
         {name: 'footer', title: 'Footer Menu',type: 'reference', to: [{type: 'menuContainer',}]},
         {name: 'transformServiceItem', title: 'Business Service',type: 'reference', to: [{type: 'transformServiceItem'}]},
         {name: 'heroContentSection', title: 'Hero + Content Section',type: 'reference', to: [{type: 'heroContentSection'}]},
+        {name: 'MmHeroContentSection', title: "MM Hero Content Section",type: 'reference', to: [{type: 'MmHeroContentSection'}]},
         {name: 'transformHeroContentSection', title: SanitySectionTitlesEnum.HERO_CONTENT,type: 'reference', to: [{type: 'transformHeroContentSection'}]},
         {name: 'transformPositivePsychologySection', title: SanitySectionTitlesEnum.POSITIVE_PSYCHOLOGY,type: 'reference', to: [{type: 'transformPositivePsychologySection'}]},
         {name: 'transformMottoSection', title: SanitySectionTitlesEnum.MOTTO,type: 'reference', to: [{type: 'transformMottoSection'}]},

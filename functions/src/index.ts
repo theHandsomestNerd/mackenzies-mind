@@ -100,7 +100,7 @@ const serveIndexFile = (req: any, res: any) => {
     let pageSlug = tokenizedParams[tokenizedParams.length - 1];
 
     if (!pageSlug) {
-      pageSlug = "coming-soon";
+      pageSlug = "home";
     }
 
     logClient.log("server-side", "NOTICE",

@@ -24,6 +24,7 @@ import ThwWhyChooseUsSection from "./transform-hw/ThwWhyChooseUsSection";
 import ThwContactUsSection from "./transform-hw/ThwContactUsSection";
 import {SanityHomePage} from "./block-content-ui/static-pages/cmsStaticPagesClient";
 import ThwServicesEducationPage from "./transform-hw/service-education-page/ThwServiceEducationPage";
+import MMHeroContentSection from "./mackenzies-mind/MMHeroContentSection";
 
 export type BlockContentLayoutContainerProps = {
     content?: any,
@@ -157,6 +158,15 @@ const BlockContentLayoutContainer: FunctionComponent<BlockContentLayoutContainer
                                  style={{backgroundColor: MackenziesMindTheme.palette.background.paper}}>
                         <ThwContactUsSection
                             sectionData={thwCUSection}
+                        />
+                    </Grid>
+                case 'MmHeroContentSection':
+                    const mmHeroSection: ThwHeroContentSectionType = columnLayoutContainer
+
+                    return <Grid key={'MMHeroContentSection'} container item xs={12} justifyContent='center'
+                                 style={{backgroundColor: MackenziesMindTheme.palette.background.paper}}>
+                        <MMHeroContentSection
+                            sectionData={mmHeroSection}
                         />
                     </Grid>
                 // case 'menuContainer':

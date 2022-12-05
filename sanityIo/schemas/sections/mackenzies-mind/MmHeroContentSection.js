@@ -45,6 +45,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'contentLink',
+      title: 'Content Link',
+      type: 'string',
+    },
+    {
       name: 'contentText',
       title: 'Content Text',
       type: 'text',

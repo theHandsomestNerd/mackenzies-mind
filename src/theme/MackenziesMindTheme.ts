@@ -104,6 +104,8 @@ export enum COLORS {
     LIGHT_GRAY = '#E3E3E3',
     TRANSPARENTWHITE = 'rgba(255,255,255,0.75)',
     LIGHTBLUE = '#2CC4D7',
+    TRANSPARENTLIGHTBLUE = 'rgba(44,196,215,0.85)',
+    TRANSPARENTLIGHTPINK = 'rgba(44,196,215,0.85)',
     ALMOSTPURPLE = "#331BAD",
     LIGHTGRAY = "#F4F3F5",
     MEDIUMGRAY = "#BCB9B0",
@@ -157,11 +159,11 @@ const MackenziesMindTheme = createTheme({
         fontFamily: fonts,
         h1: {
             // Title1
-            fontSize: '70px',
+            fontSize: '120px',
             fontStyle: 'normal',
             fontWeight: "bold",
             lineHeight: 1.3,
-            letterSpacing: '0.20em'
+            letterSpacing: '-0.03em'
         },
         h2: {
             // Title2

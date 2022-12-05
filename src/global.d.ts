@@ -14,8 +14,10 @@ declare module '*.png' {
 // }
 //
 declare module '*.mp4'
+declare module '*.wav'
 declare module 'react-meta-tags';
 declare module '@sanity/block-content-to-react'
+declare module 'react-wavy-audio'
 
 declare module '*.module.css' {
     const classes: { [key: string]: string }
