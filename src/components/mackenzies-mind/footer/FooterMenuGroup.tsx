@@ -2,7 +2,7 @@ import React, {FunctionComponent, useEffect, useState} from 'react'
 import {makeStyles, Theme} from '@material-ui/core/styles'
 
 import {Grid, Link, Typography} from '@material-ui/core'
-import MackenziesMindTheme from "../../../theme/MackenziesMindTheme";
+import MackenziesMindTheme, {raleway} from "../../../theme/MackenziesMindTheme";
 import {SanityMenuGroup, SanityMenuItem} from "../../../common/sanityIo/Types";
 
 export const useStyles = makeStyles((theme: Theme) => ({
@@ -57,7 +57,7 @@ const FooterMenuGroup: FunctionComponent<LandingPagesFooterMenuGroupProps> = ({m
     return (
         <Grid container direction="column" spacing={2} className={classes.root}>
             <Grid container item>
-                <Typography color='primary' variant="body2"
+                <Typography color='primary' variant="body1"
                             className={classes.menuTitle}>{menuGroupContents && menuGroupContents.menuGroupTitle}</Typography>
             </Grid>
             <Grid item container>
@@ -67,7 +67,7 @@ const FooterMenuGroup: FunctionComponent<LandingPagesFooterMenuGroupProps> = ({m
                             return (
                                 <Grid key={index} item>
                                     <Link href={menuLink.url} className={classes.footerLink}>
-                                        <Typography variant="body1" color='textSecondary' noWrap>
+                                        <Typography variant="body1" color='textSecondary' style={{...raleway}}>
                                             {menuLink.displayText}
                                         </Typography>
                                     </Link>

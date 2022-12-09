@@ -1,5 +1,5 @@
 export default {
-  name: 'MmSongAddSection',
+  name: 'MmSongAdSection',
   title: 'MM 1/2 Music Player + Content section',
   type: 'document',
   fields: [
@@ -11,6 +11,11 @@ export default {
     {
       name: 'title',
       title: 'Title',
+      type: 'string',
+    },
+    {
+      name: 'anchor',
+      title: '#Anchor',
       type: 'string',
     },
     {
@@ -50,15 +55,62 @@ export default {
       type: 'text',
     },
     {
-      name: 'ctaButtonTitle',
-      title: 'CTA Button Title',
+      name: 'appleMusicLink',
+      title: 'Apple Music Link',
       type: 'string'
     },
     {
-      name: 'ctaButtonLink',
-      title: 'CTA Button Link',
+      name: 'featuredSongFile',
+      title: 'Song File',
+      type: 'songFile'
+    },
+    {
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'genre',
+      title: 'Genre',
       type: 'string'
-    }
+    },
+    {
+      name: 'year',
+      title: 'Year',
+      type: 'string',
+    },
+    {
+      name: 'artist',
+      title: 'Artist',
+      type: 'string',
+    },
+    {
+      name: 'contentLink',
+      title: 'Content Link',
+      type: 'string',
+    },
+    {
+      name: 'shortLink',
+      title: 'Short Link',
+      type: 'string',
+    },
+   {
+      name: 'reverseContent',
+      title: 'Reverse content and player',
+      type: 'boolean',
+    },
+
+    {
+      name: 'qrCode',
+      title: 'Qr Code',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
   preview: {
     select: {

@@ -7,7 +7,7 @@ import MackenziesMindTheme, {COLORS} from "../../../theme/MackenziesMindTheme";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    backgroundColor: COLORS.DARKBLUE,
+    backgroundColor: "#090909",
     // color: '#FDF3EB',
     // marginLeft: -1 * theme.spacing(1),
     // zIndex: 1000,

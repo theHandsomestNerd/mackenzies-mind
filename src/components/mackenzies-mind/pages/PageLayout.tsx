@@ -6,6 +6,7 @@ import firebaseAnalyticsClient from "../../../utils/firebase/FirebaseAnalyticsCl
 import {useLocation} from "react-router";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
+import {raleway} from "../../../theme/MackenziesMindTheme";
 
 interface IProps {
     homePage: SanityTransformHwHomePage
@@ -27,9 +28,9 @@ const PageLayout: FunctionComponent<IProps> = (props: IProps) => {
         <Grid container item>
             <Header pageHeader={props.homePage.headerMenuRef}/>
         </Grid>
-        <Grid container item style={{height: "102px"}}>
+        {/*<Grid container item style={{height: "102px"}}>*/}
 
-        </Grid>
+        {/*</Grid>*/}
         <Grid item container>
             {
                 props.homePage.pageContent && <Grid container item>
@@ -46,16 +47,18 @@ const PageLayout: FunctionComponent<IProps> = (props: IProps) => {
               alignContent='center'
               alignItems='center'
               style={{
-                  backgroundColor: "white",
+                  // backgroundColor: "white",
+                  borderTop: "1px solid white",
                   position: "static",
                   bottom: 0,
-                  padding: theme.spacing(1, 3, 1.5)
+                  padding: theme.spacing(0, 3, .5)
               }}
             // xs={11}
               justifyContent='space-between'>
             <Grid item xs={8}>
                 <Grid item xs={8} sm={12}>
                     <Link
+                        style={{...raleway}}
                         gutterBottom
                         href='https://thehandsomestnerd.com'
                         color='textPrimary'

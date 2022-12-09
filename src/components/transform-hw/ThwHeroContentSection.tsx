@@ -5,7 +5,7 @@ import {urlFor} from '../block-content-ui/static-pages/cmsStaticPagesClient'
 import {ThwHeroContentSectionType} from "../BlockContentTypes";
 import clsx from "clsx";
 import useCustomStyles from "../mackenzies-mind/pages/Styles";
-import MackenziesMindTheme, {rainbow, raleway, ralewayBold, singa} from "../../theme/MackenziesMindTheme";
+import MackenziesMindTheme, {rainbow, raleway} from "../../theme/MackenziesMindTheme";
 import firebaseAnalyticsClient from "../../utils/firebase/FirebaseAnalyticsClient";
 import PageContext from "../page-context/PageContext";
 import {Speaker} from "@material-ui/icons";

@@ -1,4 +1,4 @@
-import {SanityImageSource} from "@sanity/asset-utils";
+import {SanityFileAsset, SanityImageSource} from "@sanity/asset-utils";
 import {SanityRef, SanitySlug} from "../common/sanityIo/Types";
 
 export type HeroContentSectionType = {
@@ -74,6 +74,68 @@ export type ThwHeroContentSectionType = {
     ctaButtonLink: string
 }
 
+export type MmSongAdSectionType = {
+    name: string
+    anchor: string
+    title: string
+    heroImage: SanityImageAsset
+    heroImageAltText: string
+    heroImageBackground?: SanityImageAsset
+    contentWelcomeMessage: string
+    contentTitle: string
+    contentText: string
+    appleMusicLink: string
+    coverImage: SanityImageAsset
+    genre: string
+    year: string
+    artist: string
+    contentLink: string
+    shortLink:string
+    qrCode: SanityImageAsset
+    reverseContent:boolean
+}
+
+// {
+//     name: 'coverImage',
+//         title: 'Cover Image',
+//     type: 'image',
+//     options: {
+//     hotspot: true,
+// },
+// },
+// {
+//     name: 'genre',
+//         title: 'R&B/SOUL',
+//     type: 'string'
+// },
+// {
+//     name: 'year',
+//         title: 'Year',
+//     type: 'string',
+// },
+// {
+//     name: 'artist',
+//         title: 'Artist',
+//     type: 'string',
+// },
+// {
+//     name: 'contentLink',
+//         title: 'Content Link',
+//     type: 'string',
+// },
+// {
+//     name: 'shortLink',
+//         title: 'Short Link',
+//     type: 'string',
+// },
+// {
+//     name: 'qrCode',
+//         title: 'Qr Code',
+//     type: 'image',
+//     options: {
+//     hotspot: true,
+// },
+// },
 
 export type ServiceAmenityTypeRef = SanityRef
 export type ServiceAmenityType = {
@@ -118,6 +180,40 @@ export type ThwAboutProprietorSectionType = {
     proprietorImageAltText: string
     proprietorSignatureImage: SanityImageAsset
     proprietorSignatureImageAltText: string
+    ctaButtonText: string
+    ctaButtonLink: string
+}
+export type ArtistAtAGlanceType = {
+    bornName: string
+    artistName: string
+    artistGenre: string
+    birthName: Date
+    birthDate: Date
+    birthLocation: string
+    otherNames: string[]
+    occupations: string[]
+    labels: string[]
+    instruments: string[]
+    fromActiveDate: Date
+    toActiveDate: Date
+    artistSongList: MmSongAdSectionType[]
+    artistWorks: string[]
+    videography: MmGalleryItemNoRefType[]
+    ctaButtonText: string
+    ctaButtonLink: string
+}
+
+export type AboutArtistSectionType = {
+    name: string
+    artistImage: SanityImageAsset
+    artistName:string
+    artistGenre: string
+    artistDetails: ArtistAtAGlanceType
+    contentTitle: string
+    contentText: string[]
+    artistImageAltText: string
+    artistSignatureImage: SanityImageAsset
+    artistSignatureImageAltText: string
     ctaButtonText: string
     ctaButtonLink: string
 }
@@ -209,4 +305,42 @@ export type ThwContactUsSectionType = {
     youtube?: string,
     rhsTitle:string,
     formSubmitButtonText: string
+}
+
+export type MmContactUsSectionType = {
+    name: string
+    bgImageSrc: SanityImageAsset
+    lhsTitle: string
+    lhsContentText: string
+    // phone?: string
+    // email?: string,
+    // facebook?: string,
+    // twitter?: string,
+    // linkedIn?: string,
+    // youtube?: string,
+    rhsTitle:string,
+    formSubmitButtonText: string
+}
+
+export type MmGalleryItemNoRefType = {
+    name: string
+    isFeatured:boolean
+    imageSrc: SanityImageAsset
+    videoFile: SanityFileAsset
+    youtubeLink:string
+    imageSrcAltText: string
+    contentTitle: string
+    contentType: string
+    slug: SanitySlug
+}
+
+
+export type MmGallerySectionType = {
+    name: string
+    contentTitle: string
+    contentPreTitle: string
+    contentText: string
+    contentTexts: string[]
+    isVideoView: boolean
+    galleryList: MmGalleryItemNoRefType[]
 }

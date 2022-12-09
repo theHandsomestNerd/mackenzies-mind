@@ -41,7 +41,8 @@ const useCustomStyles = makeStyles({
     },
     fullscreenOverlay: {
         position: "absolute",
-        backgroundColor: `rgba(0, 0, 0, .5)`
+        backgroundColor: `rgba(0, 0, 0, .5)`,
+        // backdropFilter: 'blur(10px)'
     },
     fullScreenImage: {
         position: "relative",
@@ -62,7 +63,7 @@ const useCustomStyles = makeStyles({
         minHeight: '512px',
         height: '100%',
         width: "100%",
-        zIndex: 1
+        zIndex: 1,
     },
     fullContainer: {
         width: '100%',

@@ -30,6 +30,18 @@ export default () =>
                 .title('Page Section: Custom 1 column')
                 .child(createSuperPane('column1BlockContent', S)),
             S.listItem()
+                .title('Mm Song Ad section')
+                .child(createSuperPane('MmSongAdSection', S)),
+            S.listItem()
+                .title('Mm Gallery Item')
+                .child(createSuperPane('MmGalleryItem', S)),
+            S.listItem()
+                .title('Mm About the Artist')
+                .child(createSuperPane('MmAboutTheArtistSection', S)),
+            S.listItem()
+                .title('MM Contact Form')
+                .child(createSuperPane('MmContactUsSection', S)),
+            S.listItem()
                 .title('Page Section: Custom 2 column')
                 .child(createSuperPane('column2BlockContent', S)),
             S.listItem()

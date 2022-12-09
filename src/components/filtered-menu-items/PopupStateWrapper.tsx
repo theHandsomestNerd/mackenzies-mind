@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
-import {Button, Grid, Popover, Typography} from '@material-ui/core'
-import MackenziesMindTheme from "../../theme/MackenziesMindTheme";
+import {Button, Grid, Popover, Typography, useTheme} from '@material-ui/core'
+import MackenziesMindTheme, {raleway} from "../../theme/MackenziesMindTheme";
 
 import PopupState, {bindPopover, bindTrigger} from "material-ui-popup-state";
 import {ArrowDropDown} from "@material-ui/icons";
@@ -39,6 +39,7 @@ const PopupStateWrapper: FunctionComponent<FilteredMenuItemsPopupProps> = ({menu
     //     const isShow = currPos.y > -100
     //     if (isShow !== hideOnScroll) setHideOnScroll(isShow)
     // }, [hideOnScroll,setHideOnScroll])
+    const theme = useTheme()
 
     return (<PopupState variant="popover" popupId={menuGroup.menuGroupTitle?.toLowerCase().replace(" ", "-")}>
         {(popupState) => {
@@ -58,10 +59,12 @@ const PopupStateWrapper: FunctionComponent<FilteredMenuItemsPopupProps> = ({menu
                         height: "100%",
                         color: MackenziesMindTheme.palette.secondary.main
                     }}
-                    endIcon={<ArrowDropDown></ArrowDropDown>}
+                    endIcon={<ArrowDropDown style={{color: theme.palette.text.primary}}></ArrowDropDown>}
                 >
                     <Typography variant='body2'
-                                style={{fontSize: "18px"}}>{menuGroup.menuGroupTitle}</Typography>
+                                color='textPrimary'
+                                style={{...raleway,fontWeight: 800,}}
+                                >{menuGroup.menuGroupTitle}</Typography>
                 </Button>
                 <Popover
                     {...bindPopover(popupState)}
@@ -70,11 +73,11 @@ const PopupStateWrapper: FunctionComponent<FilteredMenuItemsPopupProps> = ({menu
                         style: {
                             borderTopLeftRadius: 0,
                             borderTopRightRadius: 0,
-                            backgroundColor: MackenziesMindTheme.palette.primary.main
+                            backgroundColor: MackenziesMindTheme.palette.background.default
                         }
                     }}
                     anchorOrigin={{
-                        vertical: 100,
+                        vertical: 50,
                         horizontal: "right"
                     }}
                     transformOrigin={{

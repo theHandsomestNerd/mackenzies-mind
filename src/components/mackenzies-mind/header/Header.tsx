@@ -10,7 +10,7 @@ import Logo from "../../transform-hw/logo/Logo";
 
 export const useStyles = makeStyles((theme: Theme) => ({
     root: {
-        height: '104px',
+        height: '50px',
         backgroundColor: COLORS.TRANSPARENTWHITE,
         transition: 'background-color .5s ease 0s',
         paddingLeft: theme.spacing(4)

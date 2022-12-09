@@ -69,6 +69,7 @@ const HOMEPAGE = `_type,
           phone,
           description,
           metaImage,
+          youtubeChannelLink,
           headerMenuRef->{
              ${MENUGROUPCONTAINER}
            },
@@ -78,6 +79,15 @@ const HOMEPAGE = `_type,
           pageContent {
             "content": content[]->{
                 ...,
+            artistDetails {
+                ...,
+                "artistSongList": artistSongList[]->{
+                ...,
+                },
+                "artistWorks": artistWorks[]->,
+                "videography": videography[]->,
+            },
+                "galleryList": galleryList[]->,
                 "servicesList": servicesList[]->{
                     ${SERVICE}
                 },

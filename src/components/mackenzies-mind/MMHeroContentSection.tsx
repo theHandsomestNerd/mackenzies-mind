@@ -1,18 +1,16 @@
-import React, {FunctionComponent, useContext} from 'react'
+import React, {FunctionComponent} from 'react'
 import {makeStyles, Theme} from '@material-ui/core/styles'
-import {Button, Grid, Link, Typography, useTheme} from '@material-ui/core'
+import {Grid, Typography, useTheme} from '@material-ui/core'
 import {urlFor} from '../block-content-ui/static-pages/cmsStaticPagesClient'
 import {ThwHeroContentSectionType} from "../BlockContentTypes";
 import clsx from "clsx";
-import MackenziesMindTheme, {COLORS, rainbow, raleway} from "../../theme/MackenziesMindTheme";
-import firebaseAnalyticsClient from "../../utils/firebase/FirebaseAnalyticsClient";
-import PageContext from "../page-context/PageContext";
+import {rainbow, raleway} from "../../theme/MackenziesMindTheme";
 import useCustomStyles from "./pages/Styles";
-import {Speaker} from "@material-ui/icons";
-import Player from "react-wavy-audio";
-import featuredAudio from '../../assets/music/I dont wanna miss you (Master) V3_03.wav'
-import appleMusicBadge from '../../assets/outlet-badges/Apple-Music-Logo.png'
-import spotifyBadge from '../../assets/outlet-badges/5ece500f123d6d0004ce5f8a.png'
+import AppleMusicBadgeButton from "./AppleMusicBadgeButton";
+// @ts-ignore
+import MusicPlayer from "./music-player/MusicPlayer";
+import featuredAudio from "../../assets/music/i-dont-wanna-miss-you/I dont wanna miss you (Master) V3_03.wav";
+
 
 interface IProps {
     sectionData: ThwHeroContentSectionType
@@ -29,11 +27,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
         backgroundImage: `url('${props.heroBaseImageUrl}'), url('${props.heroOverlay}')`,
         backgroundSize: 'cover, contain',
         // minHeight: 'calc(100vh - 80px)',
+        backgroundPosition:"center",
         backgroundColor: 'transparent',
         position: "relative"
     }),
     contentSection: {
-        height: 'calc(100vh - 80px)',
+        height: 'calc(100vh)',
         // marginTop: theme.spacing(10),
         backgroundColor: 'transparent',
     },
@@ -42,6 +41,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
         paddingLeft: '26px',
     }
 }))
+
 
 const MMHeroContentSection: FunctionComponent<IProps> = (props) => {
     let classParameters: CSSProps = {
@@ -56,7 +56,8 @@ const MMHeroContentSection: FunctionComponent<IProps> = (props) => {
         }
     }
 
-    const pageContext = useContext(PageContext)
+
+
 
     const classes = useStyles(classParameters)
     const globalClasses = useCustomStyles({})
@@ -83,7 +84,7 @@ const MMHeroContentSection: FunctionComponent<IProps> = (props) => {
                                 </Grid>
 
                                 <Grid item container xs={12} md={6}
-                                      style={{color: theme.palette.primary.main, position: "relative"}}
+                                      style={{color: theme.palette.primary.main, position: "relative", zIndex:2}}
                                       justifyContent='center'>
                                     <Grid container item justifyContent='center' style={{position: "absolute"}}>
                                         <Grid item>
@@ -93,27 +94,30 @@ const MMHeroContentSection: FunctionComponent<IProps> = (props) => {
                                                         style={{...rainbow,}}>{props.sectionData.contentTitle}</Typography>
                                         </Grid>
                                     </Grid>
-                                    <Player
-                                        imageUrl={null}
-                                        audioUrl={featuredAudio}
-                                        waveStyles={{
-                                            cursorWidth: 2,
-                                            progressColor: "rgba(238,62,201,0.58)",
-                                            responsive: true,
-                                            waveColor: COLORS.TRANSPARENTLIGHTBLUE,
-                                            cursorColor: "transparent",
-                                            // barWidth: 1,
-                                            width: "100vw",
-                                            barHeight: .45
-                                            // height: "370px"
-                                        }}
-                                        zoom={0}
-                                        playBackSpeedOptions={["1"]}
-                                        // waveJson
-                                        hideImage="true"
-                                        // hideWave="true"
-                                        containerStyles={{maxWidth: "100%", width: "100%"}}
-                                    />
+                                    <Grid container item style={{position: "absolute", top: 32}}>
+                                        <MusicPlayer src={featuredAudio}/>
+                                    </Grid>
+                                    {/*<Player*/}
+                                    {/*    imageUrl={null}*/}
+                                    {/*    audioUrl={featuredAudio}*/}
+                                    {/*    waveStyles={{*/}
+                                    {/*        cursorWidth: 2,*/}
+                                    {/*        progressColor: "rgba(238,62,201,0.58)",*/}
+                                    {/*        responsive: true,*/}
+                                    {/*        waveColor: COLORS.TRANSPARENTLIGHTBLUE,*/}
+                                    {/*        cursorColor: "transparent",*/}
+                                    {/*        // barWidth: 1,*/}
+                                    {/*        width: "100vw",*/}
+                                    {/*        barHeight: .45*/}
+                                    {/*        // height: "370px"*/}
+                                    {/*    }}*/}
+                                    {/*    zoom={0}*/}
+                                    {/*    playBackSpeedOptions={["1"]}*/}
+                                    {/*    // waveJson*/}
+                                    {/*    hideImage="true"*/}
+                                    {/*    // hideWave="true"*/}
+                                    {/*    containerStyles={{maxWidth: "100%", width: "100%"}}*/}
+                                    {/*/>*/}
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -143,9 +147,8 @@ const MMHeroContentSection: FunctionComponent<IProps> = (props) => {
                                 {/*            firebaseAnalyticsClient.ctaClick("hero-section", props.sectionData.ctaButtonTitle, pageContext.analyticsId,)*/}
                                 {/*        }}*/}
                                 {/*        href={props.sectionData.ctaButtonLink ?? ""}>*/}
-                                <Link
-                                    href={'https://geo.music.apple.com/us/album/i-dont-wanna-miss-you/1606929169?i=1606929172&itsct=music_box_link&itscg=30200&ls=1&app=music'}><img
-                                /><img style={{maxWidth: "100%",}} src={appleMusicBadge}/></Link>
+                                <AppleMusicBadgeButton
+                                    contentLink={'https://geo.music.apple.com/us/album/i-dont-wanna-miss-you/1606929169?i=1606929172&itsct=music_box_link&itscg=30200&ls=1&app=music'}/>
                                 {/*</Button>*/}
 
                             </Grid>

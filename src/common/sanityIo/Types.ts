@@ -39,6 +39,7 @@ export type SanityTransformHwHomePage = {
   twitter?: string
   twitterIconSrc?: SanityImageSource
   instagram?: string
+  youtubeChannelLink?:string
   instagramIconSrc?: SanityImageSource
   androidPlayStoreLink?: string
   androidPlayStoreIconSrc?: string

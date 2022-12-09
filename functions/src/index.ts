@@ -108,7 +108,10 @@ const serveIndexFile = (req: any, res: any) => {
     try {
       const pageFromSanity: SanityTransformHwHomePage = await cmsClient.fetchPage(pageSlug);
 
-      // console.log("IMAGE URL", pageFromSanity.metaImage && urlFor(pageFromSanity.metaImage).url()?.replace("undefined", process.env.SANITY_DB ?? "development"));
+      if (!pageFromSanity.title) {
+        return res.send(htmlData);
+      }
+      console.log("sanity page", pageFromSanity);
       const page = {
         ogTitle: pageFromSanity.title,
         description: pageFromSanity.description,

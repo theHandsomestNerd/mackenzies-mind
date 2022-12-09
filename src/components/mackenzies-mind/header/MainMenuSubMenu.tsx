@@ -3,7 +3,7 @@ import {
     Button,
     Collapse,
     createStyles,
-    Divider,
+    Divider, Grid,
     List,
     ListItem,
     ListItemText,
@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core'
 import {makeStyles, Theme} from "@material-ui/core/styles";
 import {ExpandLess, ExpandMore} from "@material-ui/icons";
-import MackenziesMindTheme from "../../../theme/MackenziesMindTheme";
+import MackenziesMindTheme, {rainbow} from "../../../theme/MackenziesMindTheme";
 import {SanityMenuGroup} from "../../../common/sanityIo/Types";
 import ModalContext from "../../snackbar-context/ModalContext";
 
@@ -61,9 +61,14 @@ const MainMenuSubMenu: FunctionComponent<MainMenuSubMenuProps> = ({menuGroup}) =
             <ListItem button style={{
                 paddingTop: MackenziesMindTheme.spacing(2.25),
                 paddingBottom: MackenziesMindTheme.spacing(2.25),
+                color: "white",
             }} onClick={handleClick}>
-                <ListItemText primary={menuGroup.menuGroupTitle}/>
-                {open ? <ExpandLess/> : <ExpandMore/>}
+                <Grid container alignContent='center' alignItems='center' justifyContent='space-between'>
+                <Typography style={{...rainbow, fontSize: 50}}>{menuGroup.menuGroupTitle}</Typography>
+                {open ? <ExpandLess color='inherit'/> : <ExpandMore color='inherit'/>}
+
+                </Grid>
+                {/*<ListItemText style={{...rainbow}} primary={menuGroup.menuGroupTitle}/>*/}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
@@ -84,9 +89,9 @@ const MainMenuSubMenu: FunctionComponent<MainMenuSubMenuProps> = ({menuGroup}) =
                                 paddingLeft: MackenziesMindTheme.spacing(6),
                                 paddingBottom: MackenziesMindTheme.spacing(2.25),
                                     height: "100%",
-                                    margin:0,
+                                    margin:0,color: "white"
                                 }} fullWidth>
-                                    <ListItemText>{<Typography align='left'>{menuLink.displayText}</Typography>}</ListItemText>
+                                    <ListItemText>{<Typography align='left' color='inherit'>{menuLink.displayText}</Typography>}</ListItemText>
                                 </Button>
                             </ListItem>
                         ))

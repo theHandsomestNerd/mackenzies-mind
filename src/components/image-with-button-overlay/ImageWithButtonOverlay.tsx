@@ -33,6 +33,7 @@ interface IProps {
     learnMoreLink?: string
     tooltip?: string
     source?: string
+    isContain?:boolean
 }
 
 
@@ -60,6 +61,7 @@ const ImageWIthButtonOverlay: FunctionComponent<IProps> = (props) => {
                 style={{padding: 0}}
         >
             <Grid item container direction='column'
+                  justifyContent='center'
                   style={{position: "relative", cursor: "pointer"}}>
                 {props.toColor &&
                     props.direction !== undefined &&
@@ -67,17 +69,18 @@ const ImageWIthButtonOverlay: FunctionComponent<IProps> = (props) => {
                                     direction={props.direction}
                                     isResponsive={props.isResponsive}/>}
                 {
-                    <Tooltip
-                        title={<Typography variant='subtitle1'
-                                           style={{fontWeight: "normal"}}>{props.tooltip}</Typography>}>
+                    // <Tooltip
+                    //     title={<Typography variant='subtitle1'
+                    //                        style={{fontWeight: "normal"}}>{props.tooltip}</Typography>}>
                         <Grid item container style={{
                             backgroundImage: `url(${props.imageUrl ? props.imageUrl : urlFor(props.imageSrc ?? "").height(props.height).url() ?? ''})`,
-                            backgroundSize: "cover",
+                            backgroundSize: props.isContain?"contain":"cover",
                             backgroundPosition: "center",
+                            backgroundRepeat:"no-repeat",
                             height: props.height
                         }}>
                         </Grid>
-                    </Tooltip>
+                    // </Tooltip>
                 }
                 <Grid container
                       item

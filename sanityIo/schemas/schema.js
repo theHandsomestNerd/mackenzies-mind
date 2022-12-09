@@ -39,6 +39,14 @@ import proprietorService from "./sections/transform-hw/proprietorService";
 import modal from "./modal/Modal";
 import faq from "./modal/faq";
 import MmHeroContentSection from "./sections/mackenzies-mind/MmHeroContentSection";
+import MmSongAdSection from "./sections/mackenzies-mind/MmSongAdSection";
+import MmGallerySection from "./sections/mackenzies-mind/MmGallerySection";
+import MmGalleryItem from "./sections/mackenzies-mind/MmGalleryItem";
+import MmAboutTheArtistSection from "./sections/mackenzies-mind/MmAboutTheArtist";
+import artistAtAGlance from "./sections/mackenzies-mind/artistAtAGlance";
+import videoFile from "./sections/mackenzies-mind/videoFile";
+import MmContactUsSection from "./sections/mackenzies-mind/MmContactUsSection";
+import songFile from "./sections/mackenzies-mind/songFile";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -87,6 +95,14 @@ export default createSchema({
         proprietorService,
         modal,
         faq,
-        MmHeroContentSection
+        MmHeroContentSection,
+        MmSongAdSection,
+        MmGallerySection,
+        MmGalleryItem,
+        MmAboutTheArtistSection,
+        artistAtAGlance,
+        videoFile,
+        MmContactUsSection,
+        songFile
     ]),
 })

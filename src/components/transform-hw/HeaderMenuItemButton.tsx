@@ -1,6 +1,6 @@
 import React, {FunctionComponent, useContext} from 'react'
 import {Button, Typography} from '@material-ui/core'
-import MackenziesMindTheme, {COLORS} from "../../theme/MackenziesMindTheme";
+import MackenziesMindTheme, {COLORS, raleway} from "../../theme/MackenziesMindTheme";
 import {SanityMenuItem} from "../../common/sanityIo/Types";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 import ModalContext from "../snackbar-context/ModalContext";
@@ -42,9 +42,9 @@ const HeaderMenuItemButton: FunctionComponent<HeaderMenuItemButtonProps> = ({men
                     }}
                     variant={menuItem.isContainedButton ? 'contained' : (menuItem.isOutlinedButton ? 'outlined' : 'text')}>
         <Typography noWrap
-                    color={menuItem.isOutlinedButton || menuItem.isContainedButton ? 'textSecondary' : 'secondary'}
-                    variant={menuItem.isOutlinedButton || menuItem.isContainedButton ? "button" : 'body2'}
-                    style={{fontSize: "18px"}}>{menuItem.displayText}</Typography>
+                    color={menuItem.isOutlinedButton || menuItem.isContainedButton ? 'textSecondary' : 'textPrimary'}
+                    variant={menuItem.isOutlinedButton || menuItem.isContainedButton ? "button" : 'h6'}
+                    style={{...raleway,fontWeight: 800}}>{menuItem.displayText}</Typography>
     </Button>)
 }
 

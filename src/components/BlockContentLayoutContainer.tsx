@@ -4,6 +4,9 @@ import {Card, Grid, Link} from '@material-ui/core'
 import sanityClient from '../sanityClient'
 import {blockSerializers} from '../common/sanityIo/BlockContentRenderer'
 import {
+    AboutArtistSectionType, MmContactUsSectionType,
+    MmGallerySectionType,
+    MmSongAdSectionType,
     ThwAboutProprietorSectionType,
     ThwContactUsSectionType,
     ThwHeroContentSectionType,
@@ -25,6 +28,10 @@ import ThwContactUsSection from "./transform-hw/ThwContactUsSection";
 import {SanityHomePage} from "./block-content-ui/static-pages/cmsStaticPagesClient";
 import ThwServicesEducationPage from "./transform-hw/service-education-page/ThwServiceEducationPage";
 import MMHeroContentSection from "./mackenzies-mind/MMHeroContentSection";
+import SingleListeningSection from "./mackenzies-mind/SingleListeningSection";
+import MmGallerySection from "./mackenzies-mind/MmGallerySection";
+import AboutTheArtistSection from "./mackenzies-mind/AboutTheArtistSection";
+import MmContactUs from "./mackenzies-mind/MmContactUsSection";
 
 export type BlockContentLayoutContainerProps = {
     content?: any,
@@ -36,7 +43,7 @@ const BlockContentLayoutContainer: FunctionComponent<BlockContentLayoutContainer
 
     return <Grid container item>
         {props?.content?.map((columnLayoutContainer: any, index: number) => {
-            switch (columnLayoutContainer._type) {
+            switch (columnLayoutContainer?._type) {
                 case 'column1BlockContent':
                     return <Grid key={'column1BlockContent'} container justifyContent='center' alignItems='stretch'>
                         <Grid item>
@@ -167,6 +174,50 @@ const BlockContentLayoutContainer: FunctionComponent<BlockContentLayoutContainer
                                  style={{backgroundColor: MackenziesMindTheme.palette.background.paper}}>
                         <MMHeroContentSection
                             sectionData={mmHeroSection}
+                        />
+                    </Grid>
+                case 'MmSongAdSection':
+                    const mmSongAdSection: MmSongAdSectionType = columnLayoutContainer
+
+                    return <Grid key={'MMSongAdSection' + index} container item xs={12} justifyContent='center'
+                                 style={{backgroundColor: MackenziesMindTheme.palette.background.paper}}>
+                        <Link id={mmSongAdSection.anchor} style={{position: "relative", top: -50}}><></>
+                        </Link>
+                            <SingleListeningSection
+                            sectionData={mmSongAdSection}
+                        />
+                    </Grid>
+                case 'MmGallerySection':
+                    const mmGallerySection: MmGallerySectionType = columnLayoutContainer
+
+                    return <Grid key={'MMGallerySection'+ index} container item xs={12} justifyContent='center'
+                                 style={{backgroundColor: MackenziesMindTheme.palette.background.paper}}>
+                        <Link id={"GALLERY"} style={{position: "relative", top: -50}}><></>
+                        </Link>
+                        <MmGallerySection
+                            sectionData={mmGallerySection}
+                        />
+                    </Grid>
+                case 'MmAboutTheArtistSection':
+                    const aboutTheArtistSection: AboutArtistSectionType = columnLayoutContainer
+
+                    return <Grid key={'MMAboutTheArtistSection'} container item xs={12} justifyContent='center'
+                                 style={{backgroundColor: MackenziesMindTheme.palette.background.paper}}>
+                        <Link id={"ABOUT"} style={{position: "relative", top: -50}}><></>
+                        </Link>
+                            <AboutTheArtistSection
+                            sectionData={aboutTheArtistSection}
+                        />
+                    </Grid>
+                case 'MmContactUsSection':
+                    const mmCUSection: MmContactUsSectionType = columnLayoutContainer
+
+                    return <Grid key={'mmContactUsSection'} container item xs={12} justifyContent='center'
+                                 style={{backgroundColor: MackenziesMindTheme.palette.background.paper}}>
+                        <Link id={"CONTACT_US"} style={{position: "relative", top: -50}}><></>
+                        </Link>
+                            <MmContactUs
+                            sectionData={mmCUSection}
                         />
                     </Grid>
                 // case 'menuContainer':

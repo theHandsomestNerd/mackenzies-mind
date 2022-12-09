@@ -5,6 +5,9 @@ import Phonk from './common/fonts/Phonk/Phonk Regular.otf'
 import SingaSerif from './common/fonts/Singa/Singa Serif Regular.ttf'
 import Raleway from './common/fonts/Raleway/variable/TTF/Raleway-VF.ttf'
 import Rainbow from './common/fonts/rainbow/Rainbow.ttf'
+import DrapperWoff from './common/fonts/Draper/Draper.ttf.woff'
+import DrapperWEOT from './common/fonts/Draper/Draper.ttf.eot'
+import DrapperSVG from './common/fonts/Draper/Draper.ttf.svg'
 // import PoppinsBold from '../common/fonts/Poppins/Poppins-Bold.ttf'
 import PoppinsXBold from './common/fonts/Poppins/Poppins-ExtraBold.ttf'
 // import PlexSans from '../common/fonts/IBM Plex/OpenType/IBM-Plex-Sans/IBMPlexSans-Regular.otf'
@@ -28,28 +31,6 @@ type FontFace = {
 //   `
 // }
 
-export const phonk: FontFace = {
-    fontFamily: 'Phonk',
-    fontStyle: 'normal',
-    fontDisplay: 'swap', // uses the fallback font to display the text until the custom font has fully downloaded. This is also known as a “flash of unstyled text” or FOUT.
-    fontWeight: 400,
-    src: `
-    local('Phonk'),
-    url(${Phonk}) format('opentype')
-  `
-}
-
-export const singa: FontFace = {
-    fontFamily: 'Singa Serif DEMO',
-    fontStyle: 'normal',
-    fontDisplay: 'swap', // uses the fallback font to display the text until the custom font has fully downloaded. This is also known as a “flash of unstyled text” or FOUT.
-    fontWeight: 400,
-    src: `
-    local('Singa Serif DEMO'),
-    url(${SingaSerif}) format('truetype')
-  `
-}
-
 export const raleway: FontFace = {
     fontFamily: 'Raleway',
     fontStyle: 'normal',
@@ -57,17 +38,6 @@ export const raleway: FontFace = {
     fontWeight: 400,
     src: `
     local('Raleway Bold'),
-    url(${Raleway}) format('truetype')
-  `
-}
-
-export const ralewayBold: FontFace = {
-    fontFamily: 'Raleway',
-    fontStyle: 'normal',
-    fontDisplay: 'swap', // uses the fallback font to display the text until the custom font has fully downloaded. This is also known as a “flash of unstyled text” or FOUT.
-    fontWeight: 400,
-    src: `
-    local('Raleway Regular'),
     url(${Raleway}) format('truetype')
   `
 }
@@ -82,6 +52,19 @@ export const rainbow: FontFace = {
     url(${Rainbow}) format('truetype')
   `
 }
+
+export const draper: FontFace = {
+    fontFamily: 'Draper',
+    fontStyle: 'normal',
+    fontDisplay: 'swap', // uses the fallback font to display the text until the custom font has fully downloaded. This is also known as a “flash of unstyled text” or FOUT.
+    fontWeight: 400,
+    src: `
+        url(${DrapperWoff}) format('woff'),
+        url('${DrapperSVG}#Draper') format('svg'),
+        url(${DrapperWEOT}),
+        url('${DrapperWoff}?#iefix') format('embedded-opentype')
+  `
+}
 // export const poppinsXBold: FontFace = {
 //     fontFamily: 'Poppins',
 //     fontStyle: 'normal',
@@ -93,7 +76,7 @@ export const rainbow: FontFace = {
 //   `
 // }
 
-const fonts = ['Phonk', 'Singa Serif DEMO', 'Raleway'].join(',')
+const fonts = ['Draper', 'Raleway', 'Rainbow'].join(',')
 
 export enum COLORS {
     DARKBLUE = 'rgba(0,0,53,1)',
@@ -126,7 +109,7 @@ const MackenziesMindTheme = createTheme({
     palette: {
         background: {
             default: COLORS.LIGHTGRAY,
-            paper: COLORS.DARKGRAY
+            paper: COLORS.DARKBLUE
         },
         primary: {
             main: COLORS.LIGHTBLUE,
@@ -151,7 +134,7 @@ const MackenziesMindTheme = createTheme({
         },
         text: {
             primary: COLORS.DARKBLUE,
-            secondary: COLORS.LIGHT_GRAY,
+            secondary: "#FFFFFF",
             disabled: COLORS.LIGHT_GRAY
         }
     },
@@ -185,13 +168,13 @@ const MackenziesMindTheme = createTheme({
             fontWeight: 'bold',
             fontStyle: 'normal',
             fontSize: '34px',
-            lineHeight: 1.5
+            lineHeight: 1.25
         },
         h6: {
             fontWeight: 'bold',
             fontStyle: 'normal',
             fontSize: '20px',
-            lineHeight: 1.5
+            lineHeight: 1.1
         },
         body1: {
             // Body
@@ -220,10 +203,10 @@ const MackenziesMindTheme = createTheme({
         },
         subtitle1: {
             // Small
-            fontSize: '16px',
+            fontSize: '14px',
             fontStyle: 'normal',
-            fontWeight: 750,
-            lineHeight: 1.45,
+            fontWeight: 900,
+            lineHeight: 1.15,
             letterSpacing: '-0.03em'
         },
         subtitle2: {
@@ -238,7 +221,7 @@ const MackenziesMindTheme = createTheme({
     overrides: {
         MuiCssBaseline: {
             '@global': {
-                '@font-face': [phonk, singa]
+                '@font-face': [draper, rainbow, raleway]
             },
         },
         MuiInputBase: {

@@ -104,6 +104,19 @@ export default {
             },
         },
         {
+            name: 'youtubeChannelLink',
+            title: 'YouTube Channel Link',
+            type: 'string',
+        },
+        {
+            name: 'youtubeIconSrc',
+            title: 'Twitter Icon',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
             name: 'instagram',
             title: 'Instagram Handle',
             type: 'string',
