@@ -92,7 +92,7 @@ const MainMenu: FunctionComponent<MainMenuProps> = ({menu, anchor}) => {
 
     return (<Grid item>
             <Button onClick={toggleDrawer(anchor, true)}>
-                <Menu style={{color: "#383838"}}
+                <Menu style={{color: "#FAFAFA"}}
                       fontSize='large'/>
             </Button>
             <Drawer anchor={anchor} open={isDrawerOpen}

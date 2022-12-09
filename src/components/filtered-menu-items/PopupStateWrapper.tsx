@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         "&:hover": {
             backgroundColor: 'rgba(16,43,136, 0.04)',
             "& .MuiTypography-root": {
-                color: "#2828d3"
+                color: theme.palette.primary.main
             }
         }
     }
@@ -59,10 +59,10 @@ const PopupStateWrapper: FunctionComponent<FilteredMenuItemsPopupProps> = ({menu
                         height: "100%",
                         color: MackenziesMindTheme.palette.secondary.main
                     }}
-                    endIcon={<ArrowDropDown style={{color: theme.palette.text.primary}}></ArrowDropDown>}
+                    endIcon={<ArrowDropDown style={{color: theme.palette.text.secondary}}></ArrowDropDown>}
                 >
                     <Typography variant='body2'
-                                color='textPrimary'
+                                color='textSecondary'
                                 style={{...raleway,fontWeight: 800,}}
                                 >{menuGroup.menuGroupTitle}</Typography>
                 </Button>

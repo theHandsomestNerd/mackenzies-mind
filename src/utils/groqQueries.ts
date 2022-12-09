@@ -79,6 +79,7 @@ const HOMEPAGE = `_type,
           pageContent {
             "content": content[]->{
                 ...,
+                "featuredSongFile": featuredSongFile.asset->url,
             artistDetails {
                 ...,
                 "artistSongList": artistSongList[]->{

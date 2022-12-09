@@ -10,7 +10,7 @@ import useCustomStyles from "./pages/Styles";
 import AppleMusicBadgeButton from "./AppleMusicBadgeButton";
 // @ts-ignore
 import Embed from 'react-music-embed'
-import featuredAudio from "../../assets/music/i-dont-wanna-miss-you/I dont wanna miss you (Master) V3_03.wav";
+// import featuredAudio from "../../assets/music/i-dont-wanna-miss-you/I dont wanna miss you (Master) V3_03.wav";
 import SuccintMusicPlayer from "./music-player/SuccintMusicPlayer";
 import MediaQueriesContext from "../media-queries-context/MediaQueriesContext";
 
@@ -92,7 +92,9 @@ const SingleListeningSection: FunctionComponent<IProps> = (props) => {
                         {/*</Grid>*/}
                         <Grid container item xs={11} sm={11} alignContent={'center'} alignItems='center' >
                             {/*    <Grid item>*/}
-                            <SuccintMusicPlayer src={featuredAudio} waveColor={"white"} songCover={urlFor(props.sectionData.coverImage).url()}/>
+                            {/*{props.sectionData?.featuredSongFile}*/}
+                            {/*{props.sectionData?.featuredSongFile.toString()}*/}
+                            <SuccintMusicPlayer src={props.sectionData?.featuredSongFile} waveColor={"white"} songCover={urlFor(props.sectionData.coverImage).url()}/>
 
                             {/*<Player*/}
                             {/*    imageUrl={null}*/}

@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         "&:hover":{
             backgroundColor: 'rgba(16,43,136, 0.04)',
             "& .MuiTypography-root": {
-            color: "#2828d3"
+            color: theme.palette.primary.main
             }
         }
     }
@@ -42,7 +42,7 @@ const HeaderMenuItemButton: FunctionComponent<HeaderMenuItemButtonProps> = ({men
                     }}
                     variant={menuItem.isContainedButton ? 'contained' : (menuItem.isOutlinedButton ? 'outlined' : 'text')}>
         <Typography noWrap
-                    color={menuItem.isOutlinedButton || menuItem.isContainedButton ? 'textSecondary' : 'textPrimary'}
+                    color={menuItem.isOutlinedButton || menuItem.isContainedButton ? 'textSecondary' : 'textSecondary'}
                     variant={menuItem.isOutlinedButton || menuItem.isContainedButton ? "button" : 'h6'}
                     style={{...raleway,fontWeight: 800}}>{menuItem.displayText}</Typography>
     </Button>)

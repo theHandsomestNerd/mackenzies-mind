@@ -76,6 +76,7 @@ export type ThwHeroContentSectionType = {
 
 export type MmSongAdSectionType = {
     name: string
+    featuredSongFile: string
     anchor: string
     title: string
     heroImage: SanityImageAsset

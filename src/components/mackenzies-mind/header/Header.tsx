@@ -11,12 +11,12 @@ import Logo from "../../transform-hw/logo/Logo";
 export const useStyles = makeStyles((theme: Theme) => ({
     root: {
         height: '50px',
-        backgroundColor: COLORS.TRANSPARENTWHITE,
+        backgroundColor: "#1c1c1c",
         transition: 'background-color .5s ease 0s',
         paddingLeft: theme.spacing(4)
     },
     opaque: {
-        backgroundColor: `${COLORS.LIGHTGRAY} !important`,
+        backgroundColor: `#1c1c1c !important`,
     }
 }))
 
